@@ -3,7 +3,7 @@
 # computed by SQLFluff when running the tests. Please run
 # `python test/generate_parse_fixture_yml.py`  to generate them after adding or
 # altering SQL files.
-_hash: 135aa15aee3aaa164354414c14c781d2be79758ef50a82691d3c31d809a06d78
+_hash: 441e4bd663622bade8d626ea089f500f8d883c1162ae2aee51730fc583eca7b0
 file:
 - statement:
     create_table_statement:
@@ -931,6 +931,81 @@ file:
       - keyword: COMMIT
       - keyword: PRESERVE
       - keyword: ROWS
+- statement_terminator: ;
+- statement:
+    create_table_statement:
+    - keyword: CREATE
+    - keyword: TABLE
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: backup_test
+    - keyword: AS
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: test
+    - td_table_constraint:
+      - keyword: WITH
+      - keyword: 'NO'
+      - keyword: DATA
+- statement_terminator: ;
+- statement:
+    create_table_statement:
+    - keyword: CREATE
+    - keyword: TABLE
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: backup_test
+    - keyword: AS
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: test
+    - td_table_constraint:
+      - keyword: WITH
+      - keyword: DATA
+- statement_terminator: ;
+- statement:
+    create_table_statement:
+    - keyword: CREATE
+    - keyword: TABLE
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: backup_test
+    - keyword: AS
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: test
+    - td_table_constraint:
+      - keyword: WITH
+      - keyword: DATA
+      - keyword: AND
+      - keyword: STATISTICS
+- statement_terminator: ;
+- statement:
+    create_table_statement:
+    - keyword: CREATE
+    - keyword: TABLE
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: backup_test
+    - keyword: AS
+    - table_reference:
+      - naked_identifier: schema1
+      - dot: .
+      - naked_identifier: test
+    - td_table_constraint:
+      - keyword: WITH
+      - keyword: 'NO'
+      - keyword: DATA
+      - keyword: AND
+      - keyword: 'NO'
+      - keyword: STATISTICS
 - statement_terminator: ;
 - statement:
     create_table_statement:
